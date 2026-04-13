@@ -9,20 +9,22 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body>
-    <header>
+    <header class="bg-gray-300 flex items-center justify-between sticky top-0 z-50 px-10 py-4">
       <a href="/" class="logo">Aplominal</a>
-      <nav>
-        <ul>
+      <nav class="hidden md:block">
+        <ul class="flex gap-4">
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
         </ul>
       </nav>
-      <button class="icon-cart">
-        <img src="" alt="cart" />
-        <span class="cart-badge">0</span>
-      </button>
-      <a href="pages/auth.html" class="btn-auth">Login</a>
-      <button class="hamburger">&#9776;</button>
+      <div class="right-bar flex items-center gap-4">
+        <button class="icon-cart flex items-center gap-1">
+          <img src="/assets/icons/shopping_cart.png" alt="sopping-cart" />
+          <span class="cart-badge">0</span>
+        </button>
+        <a href="pages/auth.html" class="btn-auth">Login</a>
+        <button class="hamburger md:hidden">&#9776;</button>
+      </div>
     </header>
 
     <main></main>
