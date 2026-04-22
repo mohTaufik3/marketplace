@@ -1,5 +1,6 @@
 import products from '../data/products.js';
 import { priceFormat } from './utils.js';
+import { cart } from './cart.js';
 
 const container = document.getElementById('product-container');
 const html = products
@@ -34,8 +35,8 @@ const html = products
           <!-- Price & Button -->
           <div class="pt-2 border-t border-gray-100 flex justify-between items-center">
             <p class="text-2xl font-bold text-gray-900">${priceFormat(product.price)}</p>
-            <button class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:shadow-md">
-              Beli
+            <button class="btn-buy bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:shadow-md" data-id="${product.id}">
+              Buy
             </button>
           </div>
         </div>
@@ -45,3 +46,13 @@ const html = products
   .join('');
 
 container.innerHTML = html;
+
+container.addEventListener('click', (event) => {
+  const buyButton = event.target.closest('.btn-buy');
+  if (buyButton) {
+    const productId = Number(buyButton.dataset.id);
+    const product = products.find((p) => p.id === productId);
+    cart.addItem(product);
+    console.log(cart.items);
+  }
+});
