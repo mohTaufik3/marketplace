@@ -35,7 +35,7 @@ const products = [
     price: 249000,
     category: 'T-shirt',
     description: 'T-shirt dengan teknologi "DRY-EX" yang cepat kering. Dilengkapi teknologi pengendali bau. Membuat Anda merasa segar sepanjang hari.',
-    image: '../assets/images/GazelleLowBlackWhite.png',
+    image: '../assets/images/DryEx.png',
     rating: 5.0,
     stock: 10,
   },
