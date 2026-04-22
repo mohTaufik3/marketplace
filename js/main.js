@@ -1,4 +1,5 @@
 import products from '../data/products.js';
+import { priceFormat } from './utils.js';
 
 const container = document.getElementById('product-container');
 const html = products
@@ -32,7 +33,7 @@ const html = products
           
           <!-- Price & Button -->
           <div class="pt-2 border-t border-gray-100 flex justify-between items-center">
-            <p class="text-2xl font-bold text-gray-900">Rp ${product.price.toLocaleString('id-ID')}</p>
+            <p class="text-2xl font-bold text-gray-900">${priceFormat(product.price)}</p>
             <button class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:shadow-md">
               Beli
             </button>
