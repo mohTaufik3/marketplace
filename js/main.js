@@ -47,12 +47,20 @@ const html = products
 
 container.innerHTML = html;
 
+const updateCartBadge = () => {
+  const cartBadge = document.querySelector('.cart-badge');
+  cartBadge.innerHTML = cart.getCount();
+};
+
+document.addEventListener('DOMContentLoaded', updateCartBadge);
+
 container.addEventListener('click', (event) => {
   const buyButton = event.target.closest('.btn-buy');
   if (buyButton) {
     const productId = Number(buyButton.dataset.id);
     const product = products.find((p) => p.id === productId);
     cart.addItem(product);
+    updateCartBadge();
     console.log(cart.items);
   }
 });
